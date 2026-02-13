@@ -49,6 +49,7 @@ services:
       - OM_MODE=${OM_MODE:-standard}
       - OM_TIER=deep
       - OM_API_KEY=${OM_API_KEY:-}
+      - OM_LOG_AUTH=false
 
       # Embeddings - Ollama for DEEP tier
       - OM_EMBEDDINGS=ollama
