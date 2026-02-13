@@ -49,10 +49,8 @@ export default function memories() {
     }, [])
 
     useEffect(() => {
-        if (apiKey) {
-            fetchMems()
-        }
-    }, [page, filt, apiKey])
+        fetchMems()
+    }, [page, filt])
 
     async function fetchMems() {
         setloading(true)
