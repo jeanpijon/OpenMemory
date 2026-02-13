@@ -89,6 +89,7 @@ services:
       - OM_TELEMETRY=false
     volumes:
       - openmemory_data:/data
+      - ./models.yml:/app/models.yml:ro
     depends_on:
       postgres:
         condition: service_healthy
