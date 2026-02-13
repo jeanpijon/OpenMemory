@@ -10,6 +10,12 @@ RUN npm install
 # Copy source code
 COPY . .
 
+# Accept build arguments for Next.js public env vars
+ARG NEXT_PUBLIC_API_URL
+ARG NEXT_PUBLIC_API_KEY
+ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
+ENV NEXT_PUBLIC_API_KEY=$NEXT_PUBLIC_API_KEY
+
 # Build the Next.js application
 RUN npm run build
 
