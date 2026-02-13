@@ -53,6 +53,7 @@ services:
       # Embeddings - Ollama for DEEP tier
       - OM_EMBEDDINGS=ollama
       - OLLAMA_URL=http://ollama:11434
+      - OM_OLLAMA_MODEL=mxbai-embed-large
       - OM_EMBEDDING_FALLBACK=synthetic
       - OM_VEC_DIM=1024
       - OM_EMBED_MODE=simple
@@ -89,7 +90,7 @@ services:
       - OM_TELEMETRY=false
     volumes:
       - openmemory_data:/data
-      - ./models.yml:/app/models.yml:ro
+      - ./models.yml:/models.yml:ro
     depends_on:
       postgres:
         condition: service_healthy
